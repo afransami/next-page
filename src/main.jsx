@@ -1,11 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BeakerIcon } from '@heroicons/react/24/solid'
 import App from "./App";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Login from "./Login";
+import Books from "./Books";
+import Headers from "./Headers";
+import Lottie from "lottie-react";
+import groovyWalkAnimation from "./groovyWalk.json";
 
 const router = createBrowserRouter([
   {
@@ -14,11 +19,17 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home></Home>,                
+      },
+      {
+        path: "Header",
+        element: <Headers></Headers>
+        
       },
       {
         path: "Books",
-        element: <Home></Home>,
+        element: <Books></Books>,
+        loader: fetch ('https://api.itbook.store/1.0/new')
       },
       {
         path: "About",
@@ -33,7 +44,5 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
    <RouterProvider router={router} />
-  </React.StrictMode>
 );
