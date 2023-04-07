@@ -7,24 +7,20 @@ const Books = () => {
   // const [image, sbn13, price, subtitle, title, url] = booksData;
 
   return (
-    <div className="container mx-auto">
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
+    <div className="container mx-auto ">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-4  ">
         {books.map((book) => (
-          <div>
-            <img src={book.image} alt="" />
-            <div className="px-5">
-            <h6 className="mb-8">{book.title}</h6>
-            <h4 className="mb-8" >{book.subtitle}</h4>
-            <h4 className="mb-8">{book.price}</h4>
-            </div>          
-          </div>
-          
+          <div className="border relative overflow-hidden mt-10 rounded-lg">
+            <img src={book.image} alt="" className="object-cover h-56 md:h-64 xl:h-80" />
+
+            <div className="px-5 py-5 mb-8 bg-black bg-opacity-75 text-white absolute inset-0">
+            <h6>{book.title}</h6><br />
+            <h4 >{book.subtitle}</h4><br />
+            <h4 className="" >{book.price}</h4>
+            </div>                   
+            </div> 
         ))}
       </div>
-      {/* {
-            booksData.map = ()=>
-            <h2>{}</h2>
-            } */}
     </div>
   );
 };
