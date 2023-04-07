@@ -5,6 +5,8 @@ import About from './About';
 import Books from './Books';
 import Login from './Login';
 import Headers from './Headers';
+import Lottie from "lottie-react";
+
 
 const App = () => {
   return (
@@ -14,11 +16,8 @@ const App = () => {
       <Headers></Headers>
       <Outlet></Outlet>   
       
-      {/* <Books></Books>      
-      <About></About>
-      <Login></Login> */}
 
-      {/* footer */}
+
     </div>
   );
 };

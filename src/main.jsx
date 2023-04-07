@@ -9,8 +9,7 @@ import About from "./About";
 import Login from "./Login";
 import Books from "./Books";
 import Headers from "./Headers";
-import Lottie from "lottie-react";
-import groovyWalkAnimation from "./groovyWalk.json";
+
 
 const router = createBrowserRouter([
   {
@@ -29,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: "Books",
         element: <Books></Books>,
-        loader: fetch ('https://api.itbook.store/1.0/new')
+        loader: ()=> fetch ('https://api.itbook.store/1.0/new')
       },
       {
         path: "About",
